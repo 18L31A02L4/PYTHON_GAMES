@@ -1,0 +1,31 @@
+import random
+
+data = ('rock', 'paper', 'scissor')
+running = True
+
+
+while running:
+    player = None
+    select = random.choice(data)
+    player = input("Enter a choice (rock,paper,scissor): ")
+
+    while player not in data:
+        player = input("Enter a choice (rock,paper,scissor): ")
+
+    print(f"player:{player}")
+    print(f"computer:{select}")
+
+    if player == "scissor" and select == "paper":
+        print("you win")
+    elif player == "rock" and select == "scissor":
+        print("you win")
+    elif player == "paper" and select == "rock":
+        print("you win")
+    elif player == select:
+        print("you Tie!")
+    else:
+        print("you lose :(")
+
+    if not input("play again?(yes/no):").lower() == "yes":
+        running = False
+print("Thanks for playing!")
